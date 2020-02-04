@@ -1,7 +1,22 @@
+@font-face {
+font-family: "CustomFont";
+src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
+}
+
+
 body {
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 14px;
+   font-family: "CustomFont", Helvetica, Arial, sans-serif;
+   font-size: 200px;
    line-height: 1.428571429;
    color: #FFFFFF;
    background-color: #1F19AB;
+   background-image:url('./images/party.gif'); background-repeat:repeat;
+   text-align: center;
+}
+
+.jeopardytitle {
+
+}
+
+.jeopardytitle span{
 }
