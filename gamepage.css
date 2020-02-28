@@ -48,14 +48,24 @@ td:hover {
 
 }
 
-.card.open {
+.card.show {
+  font-size: 30px;
+  color: white;
+}
 
+.card.enable {
+  transform: scale(3);
 }
 
 .card.disable {
   cursor: default;
   opacity: 0;
 
+}
+
+.card.fullscreen {
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
 }
 
 html, body {
