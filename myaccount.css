@@ -18,18 +18,15 @@ body {
 	line-height: 2em;
 }
 
-.accountButton {
+.saveButton {
 	display: inline-block;
 	border-radius: 4px;
 	background-color: #D69B00;
 	border: none;
 	text-align: center;
 	font-size: 20px;
-	padding: 1em;
-	width: 15%;
 	transition: all 0.5s;
 	cursor: pointer;
-	margin: 5px;
 	vertical-align: middle;
 }
 
@@ -67,5 +64,4 @@ img{
 	text-align: center;
 	font-size: 20px;
 }
-
 
