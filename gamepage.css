@@ -8,16 +8,17 @@ body {
 }
 
 table {
-  margin:auto;
-  border-collapse:collapse;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #1F19AB;
+
 }
 td,th {
-  cursor:pointer;
   width:100vw;
   height:15.8vh;
   border:8px solid black;
   text-align:center;
-  font-size:50px;
+  font-size:30px;
   background-color: #1F19AB;
 }
 
@@ -26,12 +27,23 @@ th {
 }
 
 td {
+  cursor: pointer;
   font-family: "CustomFont", Helvetica, Arial, sans-serif;
-  font-size: 100px;
+  font-size: 80px;
   color: #D69F4C;
 }
 td:hover {
   color:white;
+}
+
+.card.open {
+
+}
+
+.card.disable {
+  cursor: default;
+  opacity: 0;
+
 }
 
 html, body {
