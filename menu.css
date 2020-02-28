@@ -10,26 +10,10 @@ body {
    line-height: 1.428571429;
    color: #FFFFFF;
    background-color: #1F19AB;
-   background-image:url('./images/party.gif'); background-repeat:repeat;
    text-align: center;
 }
 
 .jeopardymenu {
   height: 2em;
   line-height: 2em;
-}
-
-.menubutton {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #D69B00;
-  border: none;
-  text-align: center;
-  font-size: 20px;
-  padding: 1em;
-  width: 15%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  vertical-align: middle;
 }

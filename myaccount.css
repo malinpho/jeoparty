@@ -4,7 +4,6 @@ body {
 	line-height: 1.428571429;
 	color: #FFFFFF;
 	background-color: #1F19AB;
-	background-image:url('./images/party.gif'); background-repeat:repeat;
 	text-align: center;
 }
 
@@ -16,18 +15,6 @@ body {
 	color: #FFFFFF;
 	height: 1em;
 	line-height: 2em;
-}
-
-.saveButton {
-	display: inline-block;
-	border-radius: 4px;
-	background-color: #D69B00;
-	border: none;
-	text-align: center;
-	font-size: 20px;
-	transition: all 0.5s;
-	cursor: pointer;
-	vertical-align: middle;
 }
 
 .backImg {
