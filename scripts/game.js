@@ -5,9 +5,9 @@ let cards = [...card];
 
 // @description toggles open and show class to display cards
 var displayCard = function (){
-
+    this.innerHTML="q here";
     this.classList.toggle("open");
-    this.classList.add("disable");
+    //this.classList.add("disable");
 
 };
 

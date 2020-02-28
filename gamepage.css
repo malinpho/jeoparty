@@ -11,6 +11,7 @@ table {
   margin: auto;
   border-collapse: collapse;
   background-color: #1F19AB;
+  table-layout: fixed;
 
 }
 td,th {
@@ -31,9 +32,20 @@ td {
   font-family: "CustomFont", Helvetica, Arial, sans-serif;
   font-size: 80px;
   color: #D69F4C;
+  align: center;
+  vertical-align: middle;
 }
 td:hover {
   color:white;
+}
+
+.cardtry {
+  background-color: white;
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+
 }
 
 .card.open {
