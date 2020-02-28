@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeoparty! - the Jeopardy Party Game</title>
+
+   <link href="reset.css" rel="stylesheet">
+   <link href="myaccount.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"" rel="stylesheet">
+</head>
+<body>
+	<div class=jeopardyaccount>
+		<h1 class="pageTitle">My Account</h1>
+	</div>
+	  
+	<div class="backImg">
+		<div class="profile">
+			<img src="images\test.jpg" class="profileImg"> <!-- use php to get image -->
+			<div class="profileText">
+				<h2> Pranav Patel </h2> <!-- use php to get name -->
+				<h3> India </h3> <!-- use php to get country -->
+				<form id="accountForm" action="#">
+					<table class="inputTable">
+						<tr>
+							<td>
+								<label for="country" style="font-weight: bold;" >New Country</label><br>
+								<input id="country" type="text" name="country" placeholder="type country">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="password" style="font-weight: bold;">New Password</label><br>
+								<input id="password" type="text" name="password" placeholder="at least 6 characters">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
+</html>
