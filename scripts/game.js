@@ -4,17 +4,29 @@ let cards = [...card];
 
 
 
-
-// @description toggles open and show class to display cards
+// display question and remove event listener
 var displayCard = function (){
-    this.innerHTML="question will appear here";
-    this.classList.add("show");
-};
+  // show question
+  //document.getElementById("myNav").style.height = "100%";
+  openNav();
+  // disable card
+  this.classList.add("disable");
+
+  // remove event listener so it cannot be clicked again
+  this.removeEventListener("click", displayCard);
+
+}
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
 
 
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
 // loop to add event listeners to each card
 for (var i = 0; i < cards.length; i++){
   card = cards[i];
   card.addEventListener("click", displayCard);
-
 };

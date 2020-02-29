@@ -1,11 +1,68 @@
 @font-face {
-  font-family: "CustomFont";
+  font-family: "Triumvirate";
   src: url("./fonts/webfontkit-triumvirate/triumvirate_extra_compressed_regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "itckorinna";
+  src: url("./fonts/webfontkit-itckorinna/e3e3a81b2544f4508a75573a04e0cafa.woff") format("woff");
 }
 
 body {
    background-color: white;
 }
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1F19AB;
+  background-color: #1F19AB;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: "itckorinna";
+  font-size: 75px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.categoryContent {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.2s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
 
 table {
   margin: auto;
@@ -25,11 +82,12 @@ td,th {
 
 th {
   color: white;
+  font-family: "Helvetica";
 }
 
 td {
   cursor: pointer;
-  font-family: "CustomFont", Helvetica, Arial, sans-serif;
+  font-family: "Triumvirate", Helvetica, Arial, sans-serif;
   font-size: 80px;
   color: #D69F4C;
   align: center;
@@ -39,34 +97,12 @@ td:hover {
   color:white;
 }
 
-.cardtry {
-  background-color: white;
-  display: table-cell;
-  height: 100%;
-  width: 100%;
-  vertical-align: middle;
-
-}
-
-.card.show {
-  font-size: 30px;
-  color: white;
-}
-
-.card.enable {
-  transform: scale(3);
-}
-
 .card.disable {
   cursor: default;
   opacity: 0;
 
 }
 
-.card.fullscreen {
-  width: calc(100vw - 30px);
-  height: calc(100vh - 30px);
-}
 
 html, body {
   margin: 0;
