@@ -8,6 +8,11 @@
   src: url("./fonts/webfontkit-itckorinna/e3e3a81b2544f4508a75573a04e0cafa.woff") format("woff");
 }
 
+@font-face {
+  font-family: "sharifa";
+  src: url("./fonts/webfontkit-sharifa/sharifa_free_for_personal_use-webfont.woff") format("woff");
+}
+
 body {
    background-color: white;
 }
@@ -131,5 +136,13 @@ td:hover {
 }
 
 .scoreCard {
+  background-color: #1F19AB;
+  margin: 15px;
+}
+
+.scoreCard .username {
+  color: white;
+  font-family: "sharifa";
+  font-size: 30px;
 
 }

@@ -15,11 +15,11 @@ var displayCard = function (){
 
   openNav();
   // disable card
-  // waitForBuzz();
-  // this.classList.add("disable");
+  waitForBuzz();
+  this.classList.add("disable");
   //
   // // remove event listener so it cannot be clicked again
-  // this.removeEventListener("click", displayCard);
+  this.removeEventListener("click", displayCard);
 }
 
 function openNav() {
@@ -52,6 +52,7 @@ function waitForBuzz() {
 function noAnswer() {
   alert("Time is up! No participants buzzed in.");
   document.removeEventListener("keydown", spaceInput);
+  closeNav();
 }
 
 function spaceInput(key) {
