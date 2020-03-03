@@ -88,3 +88,9 @@ body {
 .passwordToolTip:hover .passwordToolTipText {
 	visibility: visible;
 }
+
+.signupFormTable {
+	text-align: left;
+
+}
+
