@@ -15,6 +15,20 @@
 	color: #ff0000;
 }
 
+#loginButton{
+	color: #1F19AB;
+}
+
+#loginButton::before,#loginButton::after{
+	content:"";
+	position: absolute;
+	width: 20px;
+	height: 5px;
+	background: #FFFFFF;
+	transform: skewX(50deg);
+	transition: .3s linear;
+}
+
 .slickButton::before,.slickButton::after{
 	content:"";
 	position: absolute;

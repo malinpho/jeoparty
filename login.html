@@ -7,32 +7,24 @@
 
    <link href="reset.css" rel="stylesheet">
    <link href="login.css" rel="stylesheet">
+   <link href="slickButton.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class=jeopardylogin>
 		<h1>Login</h1>
 
-  	<div class="backImg">
-  		<div class="loginWindow">
-  			<form class = "loginForm" action="signup.js">
-  				<table>
-            <tr>
-              <td><label for="username">Username:</label></td>
-              <td><input type="text" id="username" name="username"></td>
-            </tr>
-            <tr>
-              <td><label for="password">Password:</label></td>
-      				<td><input type="password" id="password" name="password"></td>
-            </tr>
-          </table>
-  			</form>
-        <input class="button" type="button" onclick="window.location.href = 'homepage.html';" value="Back"/>
-  			<input class="button" type="button" onclick="window.location.href = 'menu.html';" value="Login"/>
+		<div class="login-page">
+			<div class="form">
+				<form class="login-form">
+					<input type="text" placeholder="username"/>
+					<input type="password" placeholder="password"/>
+					<button class="slickButton" id="loginButton">login</button>
+					<p class="message">Not registered? <a href="signup.html">Sign Up</a></p>
+				</form>
+			</div>
+		</div>
 
-  		</div>
-  	</div>
-  </div>
 
 </body>
 </html>
