@@ -14,10 +14,9 @@ var displayCard = function (){
   //document.getElementById("myNav").style.height = "100%";
 
   openNav();
-  // disable card
+  //disable card
   waitForBuzz();
   this.classList.add("disable");
-  //
   // // remove event listener so it cannot be clicked again
   this.removeEventListener("click", displayCard);
 }
@@ -37,6 +36,38 @@ function openScore() {
 function closeScore() {
   document.getElementById("sideScore").classList.remove("show");
 }
+
+
+
+
+
+// Get the modal
+// var modal = document.getElementById("myModal");
+//
+// // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+//
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+//
+// // When the user clicks the button, open the modal
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+//
+//
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
+
+
+
+
+
 
 
 function waitForBuzz() {
@@ -59,6 +90,7 @@ function spaceInput(key) {
   if (key.keyCode == "32") {
     alert("You have buzzed in!");
     clearTimeout(answerTimer);
+    document.getElementById("myModal").style.display = "block";
     document.removeEventListener("keydown", spaceInput);
   }
 }
