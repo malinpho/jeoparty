@@ -41,6 +41,7 @@ body {
 	background-color: rgba(0,0,0,0.5);
 	padding: 50px;
 	border-radius: 100px;
+	display: block;
 }
 
 .backButton {
@@ -61,7 +62,7 @@ body {
 .passwordToolTip {
 	position: relative;
  	display: inline-block;
- 	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+ 	
 
 }
 
@@ -88,8 +89,22 @@ body {
 	visibility: visible;
 }
 
-.signupFormTable {
-	text-align: left;
+.signupForm {
+	display: inline-block;
+	float: center;
+	width: 500px;
+}
 
+.signupForm label {
+	float: left;
+}
+
+.floatInput {
+	float: right;
+	margin-top: 30px;
+}
+
+#password {
+	margin-left: 90px;
 }
 
