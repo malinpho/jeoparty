@@ -14,7 +14,8 @@
 }
 
 body {
-   background-color: white;
+  background-color: white;
+  overflow: hidden;
 }
 
 .overlay {
@@ -115,11 +116,13 @@ td:hover {
   background: #000;
   transition: 0.4s;
   float: left;
-
 }
 
 #sideScore:hover {
   right: 0;
+}
+
+#sideScoreCards {
 }
 
 #sideScore .scoreIcon {
@@ -151,6 +154,6 @@ td:hover {
 .scoreCard .username {
   font-family: "sharifa";
   padding-bottom: 40px;
-  padding-top: 40px;
-  font-size: 40px;
+  padding-top: 30px;
+  font-size: 30px;
 }
