@@ -100,11 +100,4 @@ td:hover {
 .card.disable {
   cursor: default;
   opacity: 0;
-
-}
-
-
-html, body {
-  margin: 0;
-  height: 100%;
 }
