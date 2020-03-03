@@ -9,18 +9,29 @@
    <link href="menu.css" rel="stylesheet">
    <link href="slickButton.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"" rel="stylesheet">
-   <script type="text/javascript" src="assign2.js"> </script>
+   <script type="text/javascript" src="menu.js"> </script>
+   
+   
 </head>
-<body>
-  <div class=jeopardymenu>
-    <h1>Main Menu</h1>
-  </div>
+<body onload="addEvent()">
+	<div class=jeopardymenu>
+		<h1>Main Menu</h1>
+	</div>
 
-  <div class="menu">
-    <button class="slickButton" onclick="window.location.href = 'myaccount.html';">My Account</button>
-	<button class="slickButton" onclick="window.location.href = 'findagame.html';">Find a Game</button>
-	<button class="slickButton" onclick="window.location.href = 'leaderboard.html';">Leaderboard</button>
-  </div>
+	<div class="menu">
+		<button class="slickButton" onclick="window.location.href = 'myaccount.html';">My Account</button>
+		<button class="slickButton" id="showModal">Find a Game</button>
+		<button class="slickButton" onclick="window.location.href = 'leaderboard.html';">Leaderboard</button>
+	</div>
+	<div class="modal modal--hidden">
+		<div class="modalContent">
+			<div class="modalCloseBar">
+				<span id="hideModal">Back</span>
+			</div>
+			<button class="slickButton" onclick="window.location.href = '#';">Private Game</button>
+			<button class="slickButton" onclick="window.location.href = '#';">Public Game</button>
+		</div>
+	</div>
 
 </body>
 </html>
