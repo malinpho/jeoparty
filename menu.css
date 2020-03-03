@@ -17,3 +17,34 @@ body {
   height: 2em;
   line-height: 2em;
 }
+
+span{
+	font-size: 30px;
+}
+.modal{
+	background-color: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	padding: 1em;
+}
+.modal--hidden{
+	display: none;
+}
+
+.modalContent{
+	background-color: #ff0000;
+	padding: 2em;
+	border-radius: 20%;
+}
+
+.modalCloseBar{
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
