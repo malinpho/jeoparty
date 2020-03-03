@@ -101,3 +101,35 @@ td:hover {
   cursor: default;
   opacity: 0;
 }
+
+#sideScore {
+  position: absolute;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  transition: 0.4s;
+
+}
+
+#sideScore:hover {
+  right: 0;
+}
+
+#sideScore .scoreIcon {
+  position: absolute;
+  top: 50%;
+  transform: rotate(-90deg);
+  right: 260px;
+  background: #000;
+  opacity: 0.8;
+  color: white;
+  font-family: "Helvetica";
+  font-size: 20px;
+  padding: 20px;
+}
+
+.scoreCard {
+
+}

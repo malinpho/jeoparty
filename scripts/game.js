@@ -15,11 +15,11 @@ var displayCard = function (){
 
   openNav();
   // disable card
-  waitForBuzz();
-  this.classList.add("disable");
-
-  // remove event listener so it cannot be clicked again
-  this.removeEventListener("click", displayCard);
+  // waitForBuzz();
+  // this.classList.add("disable");
+  //
+  // // remove event listener so it cannot be clicked again
+  // this.removeEventListener("click", displayCard);
 }
 
 function openNav() {
@@ -29,6 +29,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("questionPrompt").style.height = "0%";
 }
+
+function openScore() {
+  document.getElementById("sideScore").classList.add("show");
+}
+
+function closeScore() {
+  document.getElementById("sideScore").classList.remove("show");
+}
+
 
 function waitForBuzz() {
   // start timer for 10 seconds
@@ -52,6 +61,7 @@ function spaceInput(key) {
     document.removeEventListener("keydown", spaceInput);
   }
 }
+
 // loop to add event listeners to each card
 for (var i = 0; i < cards.length; i++){
   card = cards[i];
