@@ -34,18 +34,23 @@ function waitForBuzz() {
   // start timer for 10 seconds
   answerTimer = setTimeout(noAnswer, 2000);
 
-  // //answer question
-  $(window).keydown(function(e) {
-    if (e.keyCode == 32) {
-      alert('Space pressed');
-      clearTimeout(answerTimer);
-    }
-  });
+  //answer question
+  document.addEventListener("keydown", spaceInput);
+
 
 }
 
 function noAnswer() {
   alert("Time is up! No participants buzzed in.");
+  document.removeEventListener("keydown", spaceInput);
+}
+
+function spaceInput(key) {
+  if (key.keyCode == "32") {
+    alert("You have buzzed in!");
+    clearTimeout(answerTimer);
+    document.removeEventListener("keydown", spaceInput);
+  }
 }
 // loop to add event listeners to each card
 for (var i = 0; i < cards.length; i++){
