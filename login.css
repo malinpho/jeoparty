@@ -28,15 +28,8 @@ body {
 	color: white;
 }
 
-.leaderboardTable{
-	margin-top: 150px;
-	border-collapse: collapse;
-	width: 100%;
-	color: #ff8000;
-	text-align: center;
-}
 
-.leaderboard {
+.loginWindow {
 	width: 1000px;
 	height: 1000px;
 	background-color: rgba(0,0,0,0.5);
@@ -48,7 +41,7 @@ body {
 .loginForm {
 	display: block;
 }
-.backButton {
+.button {
   display: inline-block;
   border-radius: 4px;
   background-color: #D69B00;
