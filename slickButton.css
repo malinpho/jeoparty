@@ -11,6 +11,10 @@
 	position: relative;
 }
 
+#slickButtonLogout{
+	color: #ff0000;
+}
+
 .slickButton::before,.slickButton::after{
 	content:"";
 	position: absolute;

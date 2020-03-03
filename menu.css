@@ -48,3 +48,7 @@ span{
 	justify-content: flex-end;
 	cursor: pointer;
 }
+
+.logout{
+	position:relative;
+}
