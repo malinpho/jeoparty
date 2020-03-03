@@ -58,3 +58,33 @@ body {
   margin: 5px;
   vertical-align: middle;
 }
+
+.passwordToolTip {
+	position: relative;
+ 	display: inline-block;
+ 	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+}
+
+.passwordToolTip .passwordToolTipText {
+	visibility: hidden;
+	width: 300px;
+	background-color: grey;
+	color: #fff;
+	text-align: center;
+	padding: 5px 5px;
+	border-radius: 6px;
+	font-size: 10px;
+	 
+
+	position: absolute;
+	z-index: 1;
+	top: 20px;
+	left: 105%;
+
+
+}
+
+.passwordToolTip:hover .passwordToolTipText {
+	visibility: visible;
+}

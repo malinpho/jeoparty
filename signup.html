@@ -8,6 +8,7 @@
    <link href="reset.css" rel="stylesheet">
    <link href="signup.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"" rel="stylesheet">
+   <script type="text/javascript" src="signup.js"> </script>
 </head>
 <body>
 	<div class=jeopardyaccount>
@@ -17,23 +18,27 @@
 	<div class="backImg">
 		<div class="leaderboard">
 
-			<form class = "signupForm">
+			<form class = "signupForm" >
 				<br><br><br>
 				<label for="username">Username:</label>
-				<input type="text" id="username" name="username">
+				<input type="text" id="username" name="username" required>
 				<label for="password">Password:</label>
-				<input type="password" id="password" name="password">
+				<div class="passwordToolTip">
+					<input type="password" id="password" name="password" required>
+					<span class="passwordToolTipText">Passwords must be between 6 and 20 characters, and contain at least one number.</span>
+				</div>
 				<label for="name">Name:</label>
-				<input type="text" id="name" name="name">
+				<input type="text" id="name" name="name" required>
 				<label for="country">Country:</label>
-				<input type="text" id="country" name="country">
+				<input type="text" id="country" name="country" value="Canada" required>
 
 
-			</form>
 			
 			
-			<input class="backButton" type="button" onclick="window.location.href = 'login.html';" value="Signup"/>
+			<br>
+			<input class="backButton" type="button" onclick="signup()" value="Signup"/>
 			<input class="backButton" type="button" onclick="window.location.href = 'homepage.html';" value="Back"/>
+			</form>
 		</div>
 	</div>
 
