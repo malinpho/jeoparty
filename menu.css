@@ -40,7 +40,7 @@ span{
 .modalContent{
 	background-color: #ff0000;
 	padding: 2em;
-	border-radius: 20%;
+	border-radius: 100px;
 }
 
 .modalCloseBar{
