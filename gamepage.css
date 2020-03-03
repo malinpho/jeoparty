@@ -113,8 +113,8 @@ td:hover {
   width: 300px;
   height: 100%;
   background: #000;
-  opacity: 0.8;
   transition: 0.4s;
+  float: left;
 
 }
 
@@ -128,7 +128,6 @@ td:hover {
   transform: rotate(-90deg);
   right: 260px;
   background: #000;
-  opacity: 0.8;
   color: white;
   font-family: "Helvetica";
   font-size: 20px;
@@ -138,11 +137,20 @@ td:hover {
 .scoreCard {
   background-color: #1F19AB;
   margin: 15px;
+  color: white;
+  text-align: center;
+  opacity: 1;
+}
+
+.scoreCard .score {
+  font-family: "Arial-Black";
+  padding: 10px;
+  font-size: 35px;
 }
 
 .scoreCard .username {
-  color: white;
   font-family: "sharifa";
-  font-size: 30px;
-
+  padding-bottom: 40px;
+  padding-top: 40px;
+  font-size: 40px;
 }
