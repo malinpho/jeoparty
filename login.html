@@ -7,31 +7,32 @@
 
    <link href="reset.css" rel="stylesheet">
    <link href="login.css" rel="stylesheet">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class=jeopardyaccount>
-		<h1 class="animated jackInTheBox">Login</h1>
-	</div>
-	  
-	<div class="backImg">
-		<div class="leaderboard">
+		<h1>Login</h1>
 
-			<form class = "loginForm" action="signup.js">
-				<br><br>
-				<label for="username">Username:</label>
-				<input type="text" id="username" name="username">
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password">
+  	<div class="backImg">
+  		<div class="loginWindow">
+  			<form class = "loginForm" action="signup.js">
+  				<table>
+            <tr>
+              <td><label for="username">Username:</label></td>
+              <td><input type="text" id="username" name="username"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+      				<td><input type="password" id="password" name="password"></td>
+            </tr>
+          </table>
+  			</form>
+        <input class="button" type="button" onclick="window.location.href = 'homepage.html';" value="Back"/>
+  			<input class="button" type="button" onclick="window.location.href = 'menu.html';" value="Login"/>
 
-
-			</form>
-			
-			
-			<input class="backButton" type="button" onclick="window.location.href = 'menu.html';" value="Login"/>
-			<input class="backButton" type="button" onclick="window.location.href = 'homepage.html';" value="Back"/>
-		</div>
-	</div>
+  		</div>
+  	</div>
+  </div>
 
 </body>
 </html>
