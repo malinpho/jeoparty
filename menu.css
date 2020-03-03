@@ -20,6 +20,7 @@ body {
 
 span{
 	font-size: 30px;
+	margin: 0 20px 10px 0;
 }
 .modal{
 	background-color: rgba(0,0,0,0.7);
@@ -40,7 +41,7 @@ span{
 .modalContent{
 	background-color: #ff0000;
 	padding: 2em;
-	border-radius: 100px;
+	border-radius: 10px;
 }
 
 .modalCloseBar{
@@ -51,4 +52,8 @@ span{
 
 .logout{
 	position:relative;
+}
+
+#findButton{
+	margin: 0 20px 0 0;
 }
