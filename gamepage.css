@@ -166,7 +166,6 @@ td:hover {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.6s;
   animation-name: fadeIn;
@@ -181,7 +180,7 @@ td:hover {
 .modal-content {
   position: fixed;
   bottom: 0;
-  background-color: white;
+  background-color: #D69F4C;
   opacity: 0.8;
   width: 40%;
   height: 100px;
@@ -203,6 +202,10 @@ td:hover {
 
 .modal-content input {
   transform: scale(2);
+}
+
+#input-tag::after{
+    content: "&#8617;"
 }
 
 @-webkit-keyframes fadeIn {
