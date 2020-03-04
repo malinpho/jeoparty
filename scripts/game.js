@@ -40,7 +40,7 @@ function closeScore() {
 
 function waitForBuzz() {
   // start timer for 10 seconds
-  buzzTimer = setTimeout(noBuzz, 2000);
+  buzzTimer = setTimeout(noBuzz, 5000);
 
   //answer question
   document.addEventListener("keydown", spaceInput);
@@ -54,7 +54,7 @@ function noBuzz() {
 
 function spaceInput(key) {
   if (key.keyCode == "32") {
-    alert("You have buzzed in!");
+    alert("You have buzzed in! Press enter to submit your answer.");
     clearTimeout(buzzTimer);
     // to add to css
 
@@ -74,7 +74,7 @@ function openKeyboard(){
 
   // add timer for user to enter QUESTION:
 
-  answerTimer = setTimeout(noAnswer, 2000);
+  answerTimer = setTimeout(noAnswer, 5000);
 
   //answer question
   document.addEventListener("keydown", enterInput);

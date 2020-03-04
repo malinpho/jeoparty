@@ -204,10 +204,6 @@ td:hover {
   transform: scale(2);
 }
 
-#input-tag::after{
-    content: "&#8617;"
-}
-
 @-webkit-keyframes fadeIn {
   from {opacity: 0}
   to {opacity: 1}
