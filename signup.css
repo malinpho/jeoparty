@@ -8,61 +8,64 @@ body {
 	text-align: center;
 }
 
-.jeopardyaccount{
+
+h1 {
+	margin-top: 75px;
+	font-family: "CustomFont";
+}
+
+p{
+	font-family: "Arial";
+}
+
+.jeopardysignup{
 	font-family: "CustomFont";
 	src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
 	font-size: 100px;
 	line-height: 1.428571429;
 	color: #FFFFFF;
 	height: 1em;
-	line-height: 1em;
+	line-height: 0.5em;
 }
 
-.backImg {
-	margin: 50px 50px 100px 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	color: white;
+.signuppage {
+  width: 5em;
+  padding: 5% 0 0;
+  margin: auto;
 }
 
-.leaderboardTable{
-	margin-top: 150px;
-	border-collapse: collapse;
-	width: 100%;
-	color: #ff8000;
-	text-align: center;
-}
-
-.signupboard {
-	width: 20em;
-	height: 9em;
-	background-color: rgba(0,0,0,0.5);
-	padding: 50px;
-	border-radius: 100px;
-}
-
-.backButton {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #D69B00;
-  border: none;
+.form {
+  position: relative;
+  background: #FFFFFF;
+  margin: 0 auto 100px;
+  padding: 45px;
   text-align: center;
-  font-size: 20px;
-  padding: 1em;
-  width: 15%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  vertical-align: middle;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.9), 0 10px 10px 0 rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+}
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color:#1F19AB;
+  text-decoration: none;
 }
 
 .passwordToolTip {
-	position: relative;
- 	display: inline-block;
- 	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-
 }
 
 .passwordToolTip .passwordToolTipText {
@@ -72,16 +75,12 @@ body {
 	color: #fff;
 	text-align: center;
 	padding: 5px 5px;
-	border-radius: 6px;
-	font-size: 10px;
-	 
-
+	border-radius: 10px;
+	font-size: 20px;
 	position: absolute;
 	z-index: 1;
 	top: 20px;
 	left: 105%;
-
-
 }
 
 .passwordToolTip:hover .passwordToolTipText {
@@ -90,6 +89,5 @@ body {
 
 .signupFormTable {
 	text-align: left;
-
 }
 
