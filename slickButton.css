@@ -15,14 +15,28 @@
 	color: #ff0000;
 }
 
+#slickButtonBack{
+	color: #ff0000;
+}
+
 #loginButton{
 	color: #1F19AB;
+}
+
+#slickButtonBack::before,#slickButtonBack::after{
+	content:"";
+	position: absolute;
+	width: 15px;
+	height: 5px;
+	background: #ffffff;
+	transform: skewX(50deg);
+	transition: .3s linear;
 }
 
 #loginButton::before,#loginButton::after{
 	content:"";
 	position: absolute;
-	width: 20px;
+	width: 15px;
 	height: 5px;
 	background: #FFFFFF;
 	transform: skewX(50deg);

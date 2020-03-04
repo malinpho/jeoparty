@@ -12,24 +12,26 @@
    <script type="text/javascript" src="signup.js"> </script>
    
 </head>
-<body>
+<body onload="addEvent()">
 	<div class=jeopardysignup>
 		<h1>Sign-Up</h1>
 
 		<div class="signuppage">
 			<div class="form">
 				<form class="signup-form">
-					<input type="text" placeholder="username"/>
+					<input type="text" id="username" placeholder="username"/>
 					<div class="passwordToolTip">
-						<input type="password" id="password" name="password" required placeholder="password">
+						<input type="password" id="password" name="password" placeholder="password">
 						<span class="passwordToolTipText">Passwords must be between 6 and 20 characters, and contain at least one number.</span>
 					</div>
-					<input type="text" placeholder="name"/>
-					<input type="text" placeholder="country"/>
-					<button class="slickButton" id="loginButton">Sign-UP</button>
-					<button class="slickButton" id="slickButtonLogout" onclick="window.location.href = 'homepage.html';">Back</button>
+					<input type="text" id="name" placeholder="name"/>
+					<input type="text" id="email" placeholder="email"/>
+					<input type="text" id="country" placeholder="country"/>
 				</form>
+				<button class="slickButton" id="loginButton">Sign-UP</button>
+				<button class="slickButton" id="slickButtonBack">Back</button>
 			</div>
+			
 		</div>
 	</div>
 
