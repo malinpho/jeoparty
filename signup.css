@@ -65,9 +65,6 @@ p{
   text-decoration: none;
 }
 
-.passwordToolTip {
-}
-
 .passwordToolTip .passwordToolTipText {
 	visibility: hidden;
 	width: 300px;

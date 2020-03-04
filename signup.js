@@ -1,7 +1,14 @@
 
 //function to parse signup input, and redirect to login
 //once backend is functional this function will handle semantic parsing of signup input, with user creation, and database validity handled serverside
+
+function addEvent(){
+	document.querySelector("#loginButton").addEventListener("click", function(){signup();});
+	document.querySelector("#slickButtonLogout").addEventListener("click", function(){goHome();});
+}
+
 function signup(){
+
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
 	var name = document.getElementById("name").value;
@@ -9,6 +16,10 @@ function signup(){
 
 	if (user == ""){
 		errorMessage += "You must enter a username. ";
+	}
+	
+	if (email == "") {
+		errorMessage += "You must enter an email. ";
 	}
 
 	if (pass == "") {
@@ -41,4 +52,8 @@ function signup(){
 
 	}
 	
+}
+
+function goHome(){
+	window.location.href = "homepage.html";
 }
