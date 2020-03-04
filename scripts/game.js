@@ -90,7 +90,12 @@ function spaceInput(key) {
   if (key.keyCode == "32") {
     alert("You have buzzed in!");
     clearTimeout(answerTimer);
-    document.getElementById("myModal").style.display = "block";
+    // to add to css
+    document.getElementById("myModal").style.display = "flex";
+
+    //make cursor go to textbox automatically
+    document.getElementById("answerInput").focus();
+    document.getElementById("answerInput").select();
     document.removeEventListener("keydown", spaceInput);
   }
 }
