@@ -4,14 +4,15 @@
 
 function addEvent(){
 	document.querySelector("#loginButton").addEventListener("click", function(){signup();});
-	document.querySelector("#slickButtonLogout").addEventListener("click", function(){goHome();});
+	document.querySelector("#slickButtonBack").addEventListener("click", function(){goHome();});
 }
 
 function signup(){
-
+	
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
 	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
 	var errorMessage = "";
 
 	if (user == ""){
