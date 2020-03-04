@@ -93,6 +93,8 @@ function enterInput(key) {
 
 function noAnswer() {
   alert("You have not answered in time!");
+  document.getElementById("myModal").style.display = "none";
+  closeNav();
   document.removeEventListener("keydown", enterInput);
 }
 
