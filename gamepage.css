@@ -181,7 +181,6 @@ td:hover {
   position: fixed;
   bottom: 0;
   background-color: #D69F4C;
-  opacity: 0.8;
   width: 40%;
   height: 100px;
   align-items: center;
@@ -202,6 +201,7 @@ td:hover {
 
 .modal-content input {
   transform: scale(2);
+  width: 200px;
 }
 
 @-webkit-keyframes fadeIn {
