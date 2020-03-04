@@ -13,60 +13,23 @@
    
 </head>
 <body>
-	<div class=jeopardyaccount>
-		<h1 class="animated jackInTheBox">Signup</h1>
-	</div>
-	  
-	<div class="backImg">
-		<div class="signupboard">
+	<div class=jeopardysignup>
+		<h1>Sign-Up</h1>
 
-			<form class = "signupForm" >
-				<br><br>
-				<table class="signupFormTable">
-					<tr>
-						<td>
-							
-								<label for="username">Username:</label>
-
-								<input type="text" id="username" name="username" required>
-
-							
-						</td>
-						<td>
-							<label for="password">Password:</label>
-							<div class="passwordToolTip">
-								<input type="password" id="password" name="password" required>
-								<span class="passwordToolTipText">Passwords must be between 6 and 20 characters, and contain at least one number.</span>
-							</div>
-						</td>
-						
-					</tr>
-					
-					<tr>
-						<td>
-
-								<label for="name">Name:</label>
-								<input type="text" id="name" name="name" required>
-
-						</td>
-						<td>
-							<label for="country">Country:</label>
-							<input type="text" id="country" name="country" value="Canada" required>
-						</td>
-					</tr>
-				
-				
-				
-				</table>
-				
-
-
-			
-			
-			<br>
-			<input class="slickButton" type="button" onclick="signup()" value="Signup"/>
-			<input class="slickButton" type="button" onclick="window.location.href = 'homepage.html';" value="Back"/>
-			</form>
+		<div class="signuppage">
+			<div class="form">
+				<form class="signup-form">
+					<input type="text" placeholder="username"/>
+					<div class="passwordToolTip">
+						<input type="password" id="password" name="password" required placeholder="password">
+						<span class="passwordToolTipText">Passwords must be between 6 and 20 characters, and contain at least one number.</span>
+					</div>
+					<input type="text" placeholder="name"/>
+					<input type="text" placeholder="country"/>
+					<button class="slickButton" id="loginButton">Sign-UP</button>
+					<button class="slickButton" id="slickButtonLogout" onclick="window.location.href = 'homepage.html';">Back</button>
+				</form>
+			</div>
 		</div>
 	</div>
 
