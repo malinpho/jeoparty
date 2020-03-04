@@ -3,6 +3,7 @@ let card = document.getElementsByClassName("card");
 let cards = [...card];
 
 var answerTimer;
+var buzzTimer;
 
 var keyboardInput;
 
@@ -37,50 +38,15 @@ function closeScore() {
   document.getElementById("sideScore").classList.remove("show");
 }
 
-
-
-
-
-// Get the modal
-// var modal = document.getElementById("myModal");
-//
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-//
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-//
-// // When the user clicks the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-//
-//
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-
-
-
-
-
-
-
-
 function waitForBuzz() {
   // start timer for 10 seconds
-  answerTimer = setTimeout(noAnswer, 2000);
+  buzzTimer = setTimeout(noBuzz, 2000);
 
   //answer question
   document.addEventListener("keydown", spaceInput);
-
-
 }
 
-function noAnswer() {
+function noBuzz() {
   alert("Time is up! No participants buzzed in.");
   document.removeEventListener("keydown", spaceInput);
   closeNav();
@@ -89,10 +55,45 @@ function noAnswer() {
 function spaceInput(key) {
   if (key.keyCode == "32") {
     alert("You have buzzed in!");
-    clearTimeout(answerTimer);
-    document.getElementById("myModal").style.display = "block";
+    clearTimeout(buzzTimer);
+    // to add to css
+
+    openKeyboard();
+
     document.removeEventListener("keydown", spaceInput);
   }
+}
+
+function openKeyboard(){
+  // show pop-up
+  document.getElementById("myModal").style.display = "flex";
+
+  //make cursor go to textbox automatically
+  document.getElementById("answerInput").focus();
+  document.getElementById("answerInput").select();
+
+  // add timer for user to enter QUESTION:
+
+  answerTimer = setTimeout(noAnswer, 2000);
+
+  //answer question
+  document.addEventListener("keydown", enterInput);
+
+}
+
+function enterInput(key) {
+  if (key.keyCode == "13") {
+    alert("You have answered!");
+    clearTimeout(answerTimer);
+    document.getElementById("myModal").style.display = "none";
+    closeNav();
+    document.removeEventListener("keydown", enterInput);
+  }
+}
+
+function noAnswer() {
+  alert("You have not answered in time!");
+  document.removeEventListener("keydown", enterInput);
 }
 
 // loop to add event listeners to each card

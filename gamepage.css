@@ -134,6 +134,7 @@ td:hover {
   font-family: "Helvetica";
   font-size: 20px;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .scoreCard {
@@ -165,48 +166,43 @@ td:hover {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
   -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.6s;
   animation-name: fadeIn;
-  animation-duration: 0.4s;
+  animation-duration: 0.6s;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Modal Content */
 .modal-content {
   position: fixed;
   bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
+  background-color: white;
+  opacity: 0.8;
+  width: 40%;
+  height: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100px;
 }
-
 
 .modal-content {
   padding: 2px 16px;
   margin: auto;
-
+  border-radius: 10px;
+  bottom: 200px;
 }
 
 .modal-content input {
-
-}
-
-
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+  transform: scale(2);
 }
 
 @-webkit-keyframes fadeIn {
