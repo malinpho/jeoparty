@@ -1,5 +1,10 @@
+@font-face {
+font-family: "CustomFont";
+src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
+}
+
 body {
-	font-family: "CustomFont", Helvetica, Arial, sans-serif;
+	font-family: "Arial";
 	font-size: 50px;
 	line-height: 1.428571429;
 	color: #FFFFFF;
@@ -68,12 +73,12 @@ p{
 .passwordToolTip .passwordToolTipText {
 	visibility: hidden;
 	width: 300px;
+	font-family: "Arial";
 	background-color: grey;
 	color: #fff;
 	text-align: center;
-	padding: 5px 5px;
 	border-radius: 10px;
-	font-size: 20px;
+	font-size: 10px;
 	position: absolute;
 	z-index: 1;
 	top: 20px;
@@ -87,4 +92,3 @@ p{
 .signupFormTable {
 	text-align: left;
 }
-
