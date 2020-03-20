@@ -9,7 +9,6 @@ body {
 	line-height: 1.428571429;
 	color: #FFFFFF;
 	background-color: #1F19AB;
-
 	text-align: center;
 }
 
@@ -17,10 +16,13 @@ body {
 h1 {
 	margin-top: 75px;
 	font-family: "CustomFont";
+
 }
 
 p{
 	font-family: "Arial";
+	font-size: 16px;
+	color: red;
 }
 
 .jeopardysignup{
@@ -42,7 +44,7 @@ p{
 .form {
   position: relative;
   background: #FFFFFF;
-  margin: 0 auto 100px;
+  margin: 0px;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.9), 0 10px 10px 0 rgba(0, 0, 0, 0.9);
@@ -53,11 +55,15 @@ p{
   background: #f2f2f2;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
+  margin: 5px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
   border-radius: 10px;
+}
+
+.signupFormTable {
+	text-align: left;
 }
 
 .form .message {
@@ -68,27 +74,4 @@ p{
 .form .message a {
   color:#1F19AB;
   text-decoration: none;
-}
-
-.passwordToolTip .passwordToolTipText {
-	visibility: hidden;
-	width: 300px;
-	font-family: "Arial";
-	background-color: grey;
-	color: #fff;
-	text-align: center;
-	border-radius: 10px;
-	font-size: 10px;
-	position: absolute;
-	z-index: 1;
-	top: 20px;
-	left: 105%;
-}
-
-.passwordToolTip:hover .passwordToolTipText {
-	visibility: visible;
-}
-
-.signupFormTable {
-	text-align: left;
 }

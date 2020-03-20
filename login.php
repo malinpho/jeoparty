@@ -1,3 +1,9 @@
+<?php
+include("processLogin.php");
+
+$conn = getDB();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +15,23 @@
    <link href="css/login.css" rel="stylesheet">
    <link href="css/slickButton.css" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class=jeopardylogin>
 		<h1>Login</h1>
-
 		<div class="login-page">
 			<div class="form">
-				<form class="login-form">
-					<input type="text" placeholder="username"/>
-					<input type="password" placeholder="password"/>
+				<form class="login-form" action="login.php" method="post">
+					<input type="text" placeholder="username" name="username" value = "<?php echo $username; ?>"/>
+					<input type="password" placeholder="password" name="password"/>
+          <?php if (isset($error)): ?>
+            <p class="errmessage"> <?php echo $error; ?> </p>
+          <?php endif ?>
+          <button class="slickButton" id="loginButton" type="submit" name="login" >Login</button>
 				</form>
-				<button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.html';">Login</button>
-				<p class="message">Not registered? <a href="signup.html">Sign Up</a></p>
+
+				<p class="message">Not registered? <a href="signup.php">Sign Up</a></p>
 			</div>
 		</div>
 

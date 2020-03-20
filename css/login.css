@@ -17,9 +17,10 @@ h1 {
 	font-family: "CustomFont";
 }
 
-p{
+p {
 	font-family: "Arial";
 }
+
 
 .jeopardylogin{
 	font-family: "CustomFont";
@@ -61,8 +62,14 @@ p{
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
+	font-family: "Arial";
 }
 .form .message a {
   color:#1F19AB;
   text-decoration: none;
+}
+
+.form .errmessage {
+  color: red;
+  font-size: 14px;
 }

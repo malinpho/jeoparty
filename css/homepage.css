@@ -10,7 +10,8 @@ body {
    line-height: 1.428571429;
    color: #FFFFFF;
    background-color: #1F19AB;
-   background-image:url('./images/party.gif'); background-repeat:repeat;
+   background-image: url(../images/party.gif);
+   background-repeat: repeat;
    text-align: center;
 }
 

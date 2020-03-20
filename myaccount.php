@@ -8,7 +8,7 @@
    <link href="css/reset.css" rel="stylesheet">
    <link href="css/myaccount.css" rel="stylesheet">
    <link href="css/slickButton.css" rel="stylesheet">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 
 </head>
 <body>
