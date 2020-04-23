@@ -1,9 +1,28 @@
+<?php
+
+include('functions.php');
+
+session_start();
+
+$conn = getDB();
+
+$username = $_SESSION['username'];
+
+//fetch user information
+$sqlstmt = "SELECT * FROM users LEFT JOIN countries ON users.countryID = countries.countryID WHERE username = '$username' ";
+
+$result = runQuery($conn, $sqlstmt);
+
+$user = mysqli_fetch_array($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeoparty! - the Jeopardy Party Game</title>
+    <title>Jeoparty! - My Account</title>
 
    <link href="css/reset.css" rel="stylesheet">
    <link href="css/myaccount.css" rel="stylesheet">
@@ -12,16 +31,20 @@
 
 </head>
 <body>
-	<div class=jeopardyaccount>
-		<h1>My Account</h1>
-	</div>
+  <h1> My Account </h1>
 
 	<div class="backImg">
 		<div class="profile">
-			<img src="images\test.jpg" class="profileImg"> <!-- use php to get image -->
-			<div class="profileText">
-				<h2> Pranav Patel </h2> <!-- use php to get name -->
-				<h3> India </h3> <!-- use php to get country -->
+      <div class="leftsection">
+  			<img src="images\test.png" class="profileImg"> <!-- use php to get image -->
+  			<div class="profileText">
+  				<h2><?php echo strtoupper($user['name']); ?> </h2> <!-- use php to get name -->
+  				<h3> <?php echo $user['countryName']; ?> </h3> <!-- use php to get country -->
+        </div>
+        <button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.html';" >Main Menu</button>
+      </div>
+
+      <div class="rightsection">
 				<form id="accountForm" action="#">
 					<table class="inputTable">
 						<tr>
@@ -46,13 +69,13 @@
 					<table class="inputTable">
 					<tr>
 						<td class="saveButton">
-							<button class="slickButton" type="submit">Save changes</button>
+							<button class="slickButton" id="loginButton" type="submit">Save changes</button>
 						</td>
 					</tr>
 				</table>
 				</form>
-				<button class="slickButton" onclick="window.location.href = 'menu.html';" >Main Menu</button>
-			</div>
+      </div>
+
 		</div>
 	</div>
 
