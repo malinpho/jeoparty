@@ -1,9 +1,9 @@
 //app.js
+//ddrougesquad@outlook.com
+//itsZima420 
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
-//ddrougesquad@outlook.com
-//itsZima420 
 app.get('/',function(req, res) {
     res.sendFile(__dirname + '/client/index.html');
 });
