@@ -51,7 +51,7 @@ var displayCard = function (){
 // function for API call to get categories
 function getCategories(){
 	var offset = Math.floor(Math.random() * Math.floor(1000)); // using 1000 but should be number of categories in api database
-	fetch('http://jservice.io/api/categories?count=6&offset=' + offset) // get 6 categories json
+	fetch('https://jservice.io/api/categories?count=6&offset=' + offset) // get 6 categories json
 	.then(
 		function(response) {
 			if (response.status !== 200) {
@@ -81,7 +81,7 @@ function getCategories(){
 
 
 function getQuestion(){
-	fetch('http://jservice.io/api/clues?category=' + categories[clickedColumn].id + '&value=' + value) // get question for column and row value
+	fetch('https://jservice.io/api/clues?category=' + categories[clickedColumn].id + '&value=' + value) // get question for column and row value
 	.then(
 		function(response) {
 			if (response.status !== 200) {
@@ -105,7 +105,7 @@ function getQuestion(){
 
 function openNav() {
 	document.getElementById("questionPrompt").style.height = "100%";
-  
+
 }
 
 function closeNav() {
@@ -185,6 +185,3 @@ for (var i = 0; i < cards.length; i++){
   card = cards[i];
   card.addEventListener("click", displayCard);
 };
-
-
-
