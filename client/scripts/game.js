@@ -6,61 +6,105 @@ var answerTimer;
 var buzzTimer;
 var keyboardInput;
 var categories = new Array(6);
-
+var clickedColumn; // will change per click
+var clickedRow; // will change per click
+var value; // will change per click
+var question; // will change per click
 
 
 // display question and remove event listener
 var displayCard = function (){
-  // show question
-  //document.getElementById("myNav").style.height = "100%";
-
-  openNav();
-  //disable card
-  waitForBuzz();
-  this.classList.add("disable");
-  // // remove event listener so it cannot be clicked again
-  this.removeEventListener("click", displayCard);
+	// show question
+	//document.getElementById("myNav").style.height = "100%";
+	//alert("clicked cell at: " + this.cellIndex + ", " + this.parentNode.rowIndex);
+	clickedColumn = this.cellIndex;
+	clickedRow = this.parentNode.rowIndex;
+	switch (clickedRow) {
+	  case 1:
+		value = 200;
+		break;
+	  case 2:
+		 value = 400;
+		break;
+	  case 3:
+		value = 600;
+		break;
+	  case 4:
+		value = 800;
+		break;
+	  case 5:
+		value = 1000;
+		break;
+	  default:
+		value = 200;
+	}
+	// get question then set questions
+	getQuestion();
+	openNav();
+	//disable card
+	waitForBuzz();
+	this.classList.add("disable");
+	// // remove event listener so it cannot be clicked again
+	this.removeEventListener("click", displayCard);
 }
 
 // function for API call to get categories
 function getCategories(){
-fetch('http://jservice.io/api/categories?count=6') // get 6 categories json
-  .then(
-    function(response) {
-		if (response.status !== 200) {
-			console.log('Looks like there was a problem. Status Code: ' +
-			response.status);
-			return;
-		}
-
-		// Examine the text in the response
-		response.json().then(function(data) {
-			var i;
-			for (i = 0; i < data.length; i++) {
-				categories[i] = data[i];
-				console.log(categories[i]); // .title for title, .id for id
+	var offset = Math.floor(Math.random() * Math.floor(1000)); // using 1000 but should be number of categories in api database
+	fetch('http://jservice.io/api/categories?count=6&offset=' + offset) // get 6 categories json
+	.then(
+		function(response) {
+			if (response.status !== 200) {
+				console.log('Looks like there was a problem. Status Code: ' +
+				response.status);
+				return;
 			}
-		});
-    }
-  )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-  //updateCategories();
+
+			// Examine the text in the response
+			response.json().then(function(data) {
+				var i;
+				// update game screen categories
+				var elements = document.getElementsByClassName("categoryContent"); // should be equal to # of categories called (6)
+				for (i = 0; i < data.length; i++) {
+					categories[i] = (data[i]);
+					elements[i].innerHTML = categories[i].title.toUpperCase();
+					//console.log(elements[i].innerHTML);
+					//console.log(categories[i].title); // .title for title, .id for id
+				}
+			});
+		}
+	)
+	.catch(function(err) {
+		console.log('Fetch Error :-S', err);
+	});
 }
 
-// function to update categoreis after API call gets categories
-// not working yet
-function updateCategories(){
-	var elements = document.getElementsByClassName("categoryContent");
-	for(var i=0; i<elements.length; i++) {
-		elements[i].innerHTML = categories[i].title
-	}
-}
 
+function getQuestion(){
+	fetch('http://jservice.io/api/clues?category=' + categories[clickedColumn].id + '&value=' + value) // get question for column and row value
+	.then(
+		function(response) {
+			if (response.status !== 200) {
+				console.log('Looks like there was a problem. Status Code: ' +
+				response.status);
+				return;
+			}
+			// Examine the text in the response
+			response.json().then(function(data) {
+				question = data[0].question
+				//console.log(question)
+				var element = document.getElementById("question");
+				element.innerHTML = question
+			});
+		}
+	)
+	.catch(function(err) {
+		console.log('Fetch Error :-S', err);
+	});
+}
 
 function openNav() {
-  document.getElementById("questionPrompt").style.height = "100%";
+	document.getElementById("questionPrompt").style.height = "100%";
   
 }
 
