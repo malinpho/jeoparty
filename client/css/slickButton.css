@@ -1,0 +1,71 @@
+.slickButton {
+	width: 200px;
+	height: 60px;
+	background: none;
+	border: 4px solid;
+	color: #f8ff21;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 16px;
+	position: relative;
+}
+
+#slickButtonLogout{
+	color: #ff0000;
+}
+
+#slickButtonBack{
+	color: #ff0000;
+}
+
+#loginButton{
+	color: #1F19AB;
+}
+
+#slickButtonBack::before,#slickButtonBack::after{
+	content:"";
+	position: absolute;
+	width: 15px;
+	height: 5px;
+	background: #ffffff;
+	transform: skewX(50deg);
+	transition: .3s linear;
+}
+
+#loginButton::before,#loginButton::after{
+	content:"";
+	position: absolute;
+	width: 15px;
+	height: 5px;
+	background: #FFFFFF;
+	transform: skewX(50deg);
+	transition: .3s linear;
+}
+
+.slickButton::before,.slickButton::after{
+	content:"";
+	position: absolute;
+	width: 15px;
+	height: 5px;
+	background: #1F19AB;
+	transform: skewX(50deg);
+	transition: .3s linear;
+}
+
+.slickButton::before{
+	top: -5px;
+	left: 10%;
+}
+
+.slickButton::after{
+	bottom: -5px;
+	right: 10%;
+}
+
+.slickButton:hover::before{
+	left: 85%;
+}
+.slickButton:hover::after{
+	right: 85%;
+}
