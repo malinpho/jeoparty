@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 include('functions.php');
 
@@ -10,7 +10,7 @@ $sqlstmt = "SELECT * FROM users LEFT JOIN countries ON users.countryID = countri
 $result = runQuery($conn, $sqlstmt);
 $user = mysqli_fetch_array($result);
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +18,10 @@ $user = mysqli_fetch_array($result);
   <meta charset="utf-8">
   <title>Jeoparty! - the Jeopardy Party Game</title>
 
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/gamepage.css" rel="stylesheet">
+  <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/gamepage.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link href="css/slickButton.css" rel="stylesheet">
+	<link href="../css/slickButton.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
@@ -42,6 +42,7 @@ $user = mysqli_fetch_array($result);
       <div class = "scoreCard">
         <div class="score"><!-- use php to get currentscore--></div>
         <div class="username" ><?php echo strtoupper($user['name']); ?> <!-- use php to get name --></div>
+
       </div>
 
 <!--
@@ -57,6 +58,9 @@ $user = mysqli_fetch_array($result);
 	  -->
     </div>
 	<button class="slickButton" id="slickButtonBack" onclick="window.location.href = 'menu.html';"><span>Main Menu</span></button>
+
+
+
   </div>
 
   <div id="myModal" class="modal">
@@ -194,6 +198,30 @@ $user = mysqli_fetch_array($result);
 
   </table>
 
-	<script src="scripts/game.js"></script>
+  <div>
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </div>
+
+
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script> $(function () {
+    var socket = io();
+    $('form').submit(function(){
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+  });
+</script>
+
+	<script src="../scripts/game.js"></script>
 </body>
 </html>
