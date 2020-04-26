@@ -23,13 +23,13 @@ $user = mysqli_fetch_array($result);
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href="css/slickButton.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="scripts/game.js"></script>
 
 </head>
 <body onload="getCategories()">
 
   <div id="questionPrompt" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<div class="overlay-content" id="question">Question</div><br>
     <div class="overlay-content">PRESS SPACE TO BUZZ</div>
   </div>
 
@@ -40,7 +40,7 @@ $user = mysqli_fetch_array($result);
 
     <div id ="sideScoreCards">
       <div class = "scoreCard">
-        <div class="score"><?php echo strtoupper($user['currentscore']); ?> <!-- use php to get currentscore--></div>
+        <div class="score"><!-- use php to get currentscore--></div>
         <div class="username" ><?php echo strtoupper($user['name']); ?> <!-- use php to get name --></div>
       </div>
 
@@ -73,22 +73,22 @@ $user = mysqli_fetch_array($result);
   <table>
     <tr>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">1</div>
       </th>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">2</div>
       </th>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">3</div>
       </th>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">4</div>
       </th>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">5</div>
       </th>
       <th class="category">
-        <div class="categoryContent"></div>
+        <div class="categoryContent">6</div>
       </th>
     </tr>
     <tr>
@@ -194,6 +194,6 @@ $user = mysqli_fetch_array($result);
 
   </table>
 
-
+	<script src="scripts/game.js"></script>
 </body>
 </html>
