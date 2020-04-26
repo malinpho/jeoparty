@@ -1,14 +1,39 @@
+@font-face {
+font-family: "CustomFont";
+src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
+}
+
 body {
-	font-family: "CustomFont", Helvetica, Arial, sans-serif;
-	font-size: 50px;
 	line-height: 1.428571429;
 	color: #FFFFFF;
 	background-color: #1F19AB;
-	background-image:url('./images/party.gif'); background-repeat:repeat;
 	text-align: center;
 }
 
-.backImg {
+h1 {
+	font-family: "CustomFont", Helvetica, Arial, sans-serif;
+	font-size: 100px;
+	padding: 20px;
+	padding-top: 30px;
+}
+
+.profile {
+  position: relative;
+  background: white;
+  margin: 0 auto 175px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7), 0 15px 15px 0 rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+	width: 75%;
+	height: auto;
+}
+
+.button {
+	font-size: 10px;
+}
+
+/* .backImg {
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -50,4 +75,4 @@ body {
 	color: #FFFFFF;
 	height: 1em;
 	line-height: 1em;
-}
+} */

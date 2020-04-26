@@ -3,7 +3,6 @@ font-family: "CustomFont";
 src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
 }
 
-
 body {
    font-family: "CustomFont", Helvetica, Arial, sans-serif;
    font-size: 200px;
