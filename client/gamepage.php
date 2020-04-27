@@ -33,6 +33,7 @@ $user = mysqli_fetch_array($result);
     <div class="overlay-content">PRESS SPACE TO BUZZ</div>
   </div>
 
+
   <div id="sideScore">
     <div class="scoreIcon">
       <span> SCORES </span>
@@ -40,38 +41,19 @@ $user = mysqli_fetch_array($result);
 
     <div id ="sideScoreCards">
       <div class = "scoreCard">
-        <div class="score"><!-- use php to get currentscore--></div>
+        <div class="score" id="currentScore"></div>
         <div class="username" ><?php echo strtoupper($user['name']); ?> <!-- use php to get name --></div>
-
       </div>
-
-<!--
-      <div class = "scoreCard">
-        <div class="score"> $10,000 </div>
-        <div class="username" > PRANAV </div>
-      </div>
-
-      <div class = "scoreCard">
-        <div class="score"> -$400 </div>
-        <div class="username" > DUNCAN </div>
-      </div>
-	  -->
     </div>
 	<button class="slickButton" id="slickButtonBack" onclick="window.location.href = 'menu.html';"><span>Main Menu</span></button>
-
-
-
   </div>
 
   <div id="myModal" class="modal">
-
     <div class="modal-content">
       <input type="text" id="answerInput">
       <!-- <i class="material-icons">subdirectory_arrow_left</i> -->
     </div>
-
   </div>
-
 
 
   <table>
@@ -198,6 +180,6 @@ $user = mysqli_fetch_array($result);
 
   </table>
 
-	<script src="../scripts/game.js"></script>
+	<script src="scripts/game.js"></script>
 </body>
 </html>

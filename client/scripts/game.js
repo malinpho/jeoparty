@@ -10,6 +10,10 @@ var clickedColumn; // will change per click
 var clickedRow; // will change per click
 var value; // will change per click
 var question; // will change per click
+var answer; // will change per click
+var isRight;
+var inputedAnswer;
+var runningScore = 0;
 
 
 // display question and remove event listener
@@ -92,6 +96,7 @@ function getQuestion(){
 			// Examine the text in the response
 			response.json().then(function(data) {
 				question = data[0].question
+				answer = data[0].answer
 				//console.log(question)
 				var element = document.getElementById("question");
 				element.innerHTML = question
@@ -105,7 +110,6 @@ function getQuestion(){
 
 function openNav() {
 	document.getElementById("questionPrompt").style.height = "100%";
-
 }
 
 function closeNav() {
@@ -155,7 +159,6 @@ function openKeyboard(){
   document.getElementById("answerInput").select();
 
   // add timer for user to enter QUESTION:
-
   answerTimer = setTimeout(noAnswer, 5000);
 
   //answer question
@@ -163,13 +166,21 @@ function openKeyboard(){
 
 }
 
+// check if answer matches the correct answer from api call
 function enterInput(key) {
   if (key.keyCode == "13") {
-    alert("You have answered!");
+	inputedAnswer = document.getElementById("answerInput").value;
     clearTimeout(answerTimer);
-    document.getElementById("myModal").style.display = "none";
-    closeNav();
-    document.removeEventListener("keydown", enterInput);
+	document.getElementById("myModal").style.display = "none";
+	document.removeEventListener("keydown", enterInput);
+	closeNav();
+	if (inputedAnswer == answer){
+		isRight = true;
+	}
+	else{
+		isRight = false;
+	}
+	results();
   }
 }
 
@@ -178,6 +189,24 @@ function noAnswer() {
   document.getElementById("myModal").style.display = "none";
   closeNav();
   document.removeEventListener("keydown", enterInput);
+  isRight = false;
+  results();
+}
+
+// display result MALIN HERE
+function results(){
+	//alert(isRight + " " + answer + " " + inputedAnswer)
+	// add or subtract points accordingly
+	var score = document.getElementById("currentScore");
+	if (isRight){
+		console.log("Correct answer! +$" + value);
+		runningScore = runningScore + value;
+	}
+	else{
+		console.log("Incorrect! Answer is '" + answer + "' -$" + value);
+		runningScore = runningScore - value;
+	}
+	score.innerHTML = runningScore; //updates score on side menue
 }
 
 // loop to add event listeners to each card
@@ -185,3 +214,6 @@ for (var i = 0; i < cards.length; i++){
   card = cards[i];
   card.addEventListener("click", displayCard);
 };
+
+
+
