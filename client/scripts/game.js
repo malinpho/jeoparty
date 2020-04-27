@@ -15,7 +15,6 @@ var isRight;
 var inputedAnswer;
 var runningScore = 0;
 
-
 // display question and remove event listener
 var displayCard = function (){
 	// show question
@@ -52,6 +51,18 @@ var displayCard = function (){
 	this.removeEventListener("click", displayCard);
 }
 
+function saveScore(){
+	$.ajax({
+        url: "saveScore.php",
+        type: "POST",
+        data: {score:runningScore},
+        success: function(data) {
+            console.log(data);
+        }
+	});
+	window.location.href = 'menu.html';
+}
+
 // function for API call to get categories
 function getCategories(){
 	var offset = Math.floor(Math.random() * Math.floor(1000)); // using 1000 but should be number of categories in api database
@@ -69,9 +80,12 @@ function getCategories(){
 				var i;
 				// update game screen categories
 				var elements = document.getElementsByClassName("categoryContent"); // should be equal to # of categories called (6)
+				var elementsId = document.getElementsByClassName("categoryId");
 				for (i = 0; i < data.length; i++) {
 					categories[i] = (data[i]);
 					elements[i].innerHTML = categories[i].title.toUpperCase();
+					elementsId[i].innerHTML = categories[i].id;
+					console.log(elementsId[i].innerHTML)
 					//console.log(elements[i].innerHTML);
 					//console.log(categories[i].title); // .title for title, .id for id
 				}
