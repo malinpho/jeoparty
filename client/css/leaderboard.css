@@ -8,6 +8,7 @@ body {
 	color: #FFFFFF;
 	background-color: #1F19AB;
 	text-align: center;
+	overflow: auto;
 }
 
 h1 {
@@ -29,50 +30,6 @@ h1 {
 	height: auto;
 }
 
-.button {
-	font-size: 10px;
+button {
+	margin-bottom: 40px;
 }
-
-/* .backImg {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	color: white;
-}
-
-.leaderboardTable{
-	margin-top: 100px;
-	border-collapse: collapse;
-	width: 100%;
-	color: #ff8000;
-	text-align: center;
-}
-
-.leaderboard {
-	margin-top: 5em;
-	width: 1000px;
-	height: 1000px;
-	background-color: rgba(0,0,0,0.5);
-	padding: 50px;
-	border-radius: 100px;
-}
-
-.backButton {
-	width: 100%;
-	display: block;
-	float:left;
-	margin-top: 25px;
-}
-
-.jeopardyleaderboard{
-	font-family: "CustomFont";
-	src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
-	font-size: 100px;
-	line-height: 1.428571429;
-	color: #FFFFFF;
-	height: 1em;
-	line-height: 1em;
-} */

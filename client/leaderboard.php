@@ -54,7 +54,15 @@ $numRank = 1
 
             <tr>
               <th scope="row"><?php echo $numRank?></th>
-              <td><?php echo $user['username']?></td>
+              <td><?php echo $user['username'];
+
+                if ($username == $user['username']) {
+                  echo ' (You)';
+                };
+
+
+              ?>
+              </td>
               <td><?php echo $user['averageScore']?></td>
               <td><?php echo $user['gamesPlayed']?></td>
               <td><?php echo $user['countryName']?></td>
