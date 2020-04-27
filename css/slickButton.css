@@ -28,7 +28,7 @@
 	position: absolute;
 	width: 15px;
 	height: 5px;
-	background: #ffffff;
+	background: black;
 	transform: skewX(50deg);
 	transition: .3s linear;
 }

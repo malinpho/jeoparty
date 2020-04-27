@@ -71,7 +71,7 @@ $user = mysqli_fetch_array($result);
             <div class="col-12">
               <img src="
               <?php
-              if (is_null($user['imageFile'])) {
+              if (strlen($user['imageFile']) < 2) {
                 echo "images/test.jpg";
               } else {
                 echo "images/" . $user['imageFile'];

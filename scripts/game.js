@@ -1,5 +1,5 @@
 // cards array holds all cards
-let card = document.getElementsByClassName("card");
+let card = document.getElementsByClassName("questionCard");
 let cards = [...card];
 
 var answerTimer;
@@ -85,7 +85,7 @@ function getCategories(){
 					categories[i] = (data[i]);
 					elements[i].innerHTML = categories[i].title.toUpperCase();
 					elementsId[i].innerHTML = categories[i].id;
-					console.log(elementsId[i].innerHTML)
+					// console.log(elementsId[i].innerHTML)
 					//console.log(elements[i].innerHTML);
 					//console.log(categories[i].title); // .title for title, .id for id
 				}
@@ -113,7 +113,7 @@ function getQuestion(){
 				answer = data[0].answer.toLowerCase().trim()
 				//console.log(question)
 				var element = document.getElementById("question");
-				element.innerHTML = question
+				element.innerHTML = question.toUpperCase();
 			});
 		}
 	)
@@ -130,31 +130,22 @@ function closeNav() {
   document.getElementById("questionPrompt").style.height = "0%";
 }
 
-function openScore() {
-  document.getElementById("sideScore").classList.add("show");
-}
-
-function closeScore() {
-  document.getElementById("sideScore").classList.remove("show");
-}
-
 function waitForBuzz() {
   // start timer for 10 seconds
-  buzzTimer = setTimeout(noBuzz, 5000);
+  buzzTimer = setTimeout(noBuzz, 7500);
 
   //answer question
   document.addEventListener("keydown", spaceInput);
 }
 
 function noBuzz() {
-  alert("Time is up! No buzzed in.");
+  popUpMessage("Time is up! You did not buzz in.");
   document.removeEventListener("keydown", spaceInput);
   closeNav();
 }
 
 function spaceInput(key) {
   if (key.keyCode == "32") {
-    alert("You have buzzed in! Press enter to submit your answer.");
     clearTimeout(buzzTimer);
     // to add to css
 
@@ -172,8 +163,8 @@ function openKeyboard(){
   document.getElementById("answerInput").focus();
   document.getElementById("answerInput").select();
 
-  // add timer for user to enter QUESTION:
-  answerTimer = setTimeout(noAnswer, 5000);
+  // add timer for user to answer question:
+  answerTimer = setTimeout(noAnswer, 7500);
 
   //answer question
   document.addEventListener("keydown", enterInput);
@@ -188,39 +179,70 @@ function enterInput(key) {
 	document.getElementById("myModal").style.display = "none";
 	document.removeEventListener("keydown", enterInput);
 	closeNav();
-	if (inputedAnswer == answer){
-		isRight = true;
+	if (inputedAnswer == answer) {
+		isRight = 1;
 	}
 	else{
-		isRight = false;
+		isRight = 2;
 	}
 	results();
   }
 }
 
+function popUpMessage(message) {
+	// show pop-up
+	document.getElementById("gameModal").style.display = "flex";
+	document.getElementById("gameModalContent").innerHTML = message;
+
+	// wait a few seconds before closing modal
+	setTimeout(function(){
+    	document.getElementById("gameModal").style.display = "none";
+		}, 2000);
+
+}
+
+function hideMessage() {
+		document.getElementById("gameModal").style.display = "none";
+}
+
 function noAnswer() {
-  alert("You have not answered in time!");
   document.getElementById("myModal").style.display = "none";
   closeNav();
+	popUpMessage("You have not answered in time!");
   document.removeEventListener("keydown", enterInput);
-  isRight = false;
+  isRight = 3;
   results();
 }
 
 // display result MALIN HERE
 function results(){
-	alert(isRight + " " + answer + " " + inputedAnswer)
+	//(isRight + " " + answer + " " + inputedAnswer)
 	// add or subtract points accordingly
+
+	addToGameLog("The question was: " + question);
+
 	var score = document.getElementById("currentScore");
-	if (isRight){
-		console.log("Correct answer! +$" + value);
+	if (isRight == 1){
+		popUpMessage("Correct! '" + answer + "' was right!");
+		addToGameLog("You answered correctly! '" + answer + "' was the answer. You got $" + value + ".");
 		runningScore = runningScore + value;
 	}
-	else{
-		console.log("Incorrect! Answer is '" + answer + "' -$" + value);
+	else if (isRight == 2){
+		popUpMessage("Incorrect! Answer is '" + answer + "'");
+		addToGameLog("You answered incorrectly! '" + answer + "' was the answer. (You said '" + inputedAnswer + "'). You lost $" + value + ".");
+		runningScore = runningScore - value;
+	} else {
+		popUpMessage("You have not answered in time! Answer was '" + answer + "'");
+			addToGameLog("You didn't answer in time! '" + answer + "' was the answer. You lost $" + value + ".");
 		runningScore = runningScore - value;
 	}
-	score.innerHTML = runningScore; //updates score on side menue
+	score.innerHTML = "$" + runningScore; //updates score on side menue
+
+}
+
+function addToGameLog(message) {
+  $("#gameLog").append("<p>" + message + "</p>");
+
 }
 
 // loop to add event listeners to each card
@@ -228,6 +250,3 @@ for (var i = 0; i < cards.length; i++){
   card = cards[i];
   card.addEventListener("click", displayCard);
 };
-
-
-
