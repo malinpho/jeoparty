@@ -110,7 +110,7 @@ function getQuestion(){
 			// Examine the text in the response
 			response.json().then(function(data) {
 				question = data[0].question
-				answer = data[0].answer
+				answer = data[0].answer.toLowerCase().trim()
 				//console.log(question)
 				var element = document.getElementById("question");
 				element.innerHTML = question
@@ -183,7 +183,7 @@ function openKeyboard(){
 // check if answer matches the correct answer from api call
 function enterInput(key) {
   if (key.keyCode == "13") {
-	inputedAnswer = document.getElementById("answerInput").value;
+	inputedAnswer = document.getElementById("answerInput").value.toLowerCase().trim();
     clearTimeout(answerTimer);
 	document.getElementById("myModal").style.display = "none";
 	document.removeEventListener("keydown", enterInput);
@@ -209,7 +209,7 @@ function noAnswer() {
 
 // display result MALIN HERE
 function results(){
-	//alert(isRight + " " + answer + " " + inputedAnswer)
+	alert(isRight + " " + answer + " " + inputedAnswer)
 	// add or subtract points accordingly
 	var score = document.getElementById("currentScore");
 	if (isRight){
