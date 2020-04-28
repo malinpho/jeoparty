@@ -7,48 +7,21 @@ src: url("./fonts/webfontkit-gyparody/gyparody-webfont.woff") format("woff");
 body {
    font-family: "CustomFont", Helvetica, Arial, sans-serif;
    font-size: 200px;
-   line-height: 1.428571429;
    color: #FFFFFF;
    background-color: #1F19AB;
    text-align: center;
 }
 
 .jeopardymenu {
-  height: 2em;
-  line-height: 2em;
+  line-height: 1em;
 }
 
-span{
-	font-size: 30px;
-	margin: 0 20px 10px 0;
-}
-.modal{
-	background-color: rgba(0,0,0,0.7);
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 20px;
-	padding: 1em;
-}
-.modal--hidden{
-	display: none;
+h1 {
+	font-size: 125px;
+  margin-top: 50px;
+  font-family: "CustomFont";
 }
 
-.modalContent{
-	background-color: #ff0000;
-	padding: 2em;
-	border-radius: 10px;
-}
-
-.modalCloseBar{
-	display: flex;
-	justify-content: flex-end;
-	cursor: pointer;
-}
 
 .logout{
 	position:relative;

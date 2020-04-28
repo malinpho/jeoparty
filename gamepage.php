@@ -230,7 +230,7 @@ $user = mysqli_fetch_array($result);
           </div>
         </div>
         <div class="buttons">
-          <button class="slickButton" id="slickButtonBack" onclick="window.location.href = 'menu.html';"><span>Exit Without Saving Score</span></button>
+          <button class="slickButton" id="slickButtonBack" onclick="window.location.href = 'menu.php';"><span>Exit Without Saving Score</span></button>
 
         </div>
 

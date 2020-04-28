@@ -54,7 +54,7 @@ $conn = getDB();
           <button class="slickButton" type="submit" name="create" id="loginButton">Sign-up</button>
 
 				</form>
-          <button class="slickButton" id="slickButtonBackWhite" onclick="window.location.href = 'homepage.php'">Back</button>
+          <button class="slickButton" id="slickButtonBackWhite" onclick="window.location.href = 'homepage.php'">Home</button>
           <p class="message">Already have an account? <a href="login.php">Log In</a></p>
 			</div>
 
