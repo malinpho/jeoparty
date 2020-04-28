@@ -83,106 +83,106 @@ $user = mysqli_fetch_array($result);
             </tr>
 
             <tr>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c1 c1r1">
                 $200
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c2 c2r1">
                 $200
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c3 c3r1">
                 $200
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c4 c4r1">
                 $200
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c5 c5r1">
                 $200
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c6 c6r1">
                 $200
               </td>
             </tr>
 
             <tr>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c1 c1r2">
                 $400
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c2 c2r2">
                 $400
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c3 c3r2">
                 $400
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c4 c4r2">
                 $400
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c5 c5r2">
                 $400
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c6 c6r2">
                 $400
               </td>
             </tr>
 
             <tr>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c1 c1r3">
                 $600
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c2 c2r3">
                 $600
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c3 c3r3">
                 $600
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c4 c4r3">
                 $600
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c5 c5r3">
                 $600
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c6 c6r3">
                 $600
               </td>
             </tr>
 
             <tr>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c1 c1r4">
                 $800
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c2 c2r4">
                 $800
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c3 c3r4">
                 $800
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c4 c4r4">
                 $800
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c5 c5r4">
                 $800
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c6 c6r4">
                 $800
               </td>
             </tr>
 
             <tr>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c1 c1r5">
                 $1000
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c2 c2r5">
                 $1000
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c3 c3r5">
                 $1000
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c4 c4r5">
                 $1000
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c5 c5r5">
                 $1000
               </td>
-              <td id = "tdjeop" class="questionCard">
+              <td id = "tdjeop" class="questionCard c6 c6r5">
                 $1000
               </td>
             </tr>

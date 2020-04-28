@@ -14,33 +14,18 @@ var answer; // will change per click
 var isRight;
 var inputedAnswer;
 var runningScore = 0;
+var cID;
+var c_index = 1;
 
 // display question and remove event listener
 var displayCard = function (){
 	// show question
-	//document.getElementById("myNav").style.height = "100%";
-	//alert("clicked cell at: " + this.cellIndex + ", " + this.parentNode.rowIndex);
 	clickedColumn = this.cellIndex;
 	clickedRow = this.parentNode.rowIndex;
-	switch (clickedRow) {
-	  case 1:
-		value = 200;
-		break;
-	  case 2:
-		 value = 400;
-		break;
-	  case 3:
-		value = 600;
-		break;
-	  case 4:
-		value = 800;
-		break;
-	  case 5:
-		value = 1000;
-		break;
-	  default:
-		value = 200;
-	}
+	var classString = ("c" + (clickedColumn + 1) + "r" + (clickedRow) + "");
+	value = document.getElementsByClassName(classString)[0].innerHTML;
+	value = value.substring(1);
+	//console.log(value);
 	// get question then set questions
 	getQuestion();
 	openNav();
@@ -66,6 +51,7 @@ function saveScore(){
 // function for API call to get categories
 function getCategories(){
 	var offset = Math.floor(Math.random() * Math.floor(1000)); // using 1000 but should be number of categories in api database
+	c_index = 1;
 	fetch('https://jservice.io/api/categories?count=6&offset=' + offset) // get 6 categories json
 	.then(
 		function(response) {
@@ -85,9 +71,9 @@ function getCategories(){
 					categories[i] = (data[i]);
 					elements[i].innerHTML = categories[i].title.toUpperCase();
 					elementsId[i].innerHTML = categories[i].id;
-					// console.log(elementsId[i].innerHTML)
-					//console.log(elements[i].innerHTML);
-					//console.log(categories[i].title); // .title for title, .id for id
+					cID = categories[i].id;
+					console.log(cID);
+					updatedValues(cID);
 				}
 			});
 		}
@@ -97,6 +83,49 @@ function getCategories(){
 	});
 }
 
+function updatedValues(catID){
+	var valueElements = document.getElementsByClassName("c" + c_index);
+	c_index = c_index + 1
+	//get questions value api call
+	fetch('https://jservice.io/api/clues?category=' + catID) // returns all questions in category
+	.then(
+		function(response) {
+			if (response.status !== 200) {
+				console.log('Looks like there was a problem. Status Code: ' +
+				response.status);
+				return;
+			}
+			// Examine the text in the response
+			response.json().then(function(data) {
+				var valueList = new Array(5);
+				for (var x = 0; x < data.length; x++){
+					var tempValue = data[x].value
+					if (tempValue == null){ // category does not have this question
+						location.reload();
+						console.log("reloaded");
+					}
+					else{
+						valueList.push(tempValue);
+					}
+					// can continue to create array for questions and answer with this api call but used another api call
+					// it is resoruce extensive but don't matter for this project
+				}
+				valueList = valueList.sort(sortList);
+				for (var y = 0; y < valueList.length; y++){
+					valueElements[y].innerHTML = "$" + valueList[y]; // set value displayed for question to api value result
+				}
+			});
+		}
+	)
+	.catch(function(err) {
+		console.log('Fetch Error :-S', err);
+	});
+}
+
+// sort int list
+function sortList(a, b) {
+	return a > b ? 1 : b > a ? -1 : 0;
+}
 
 function getQuestion(){
 	fetch('https://jservice.io/api/clues?category=' + categories[clickedColumn].id + '&value=' + value) // get question for column and row value
@@ -222,6 +251,7 @@ function results(){
 	addToGameLog("The question was: " + question);
 
 	var score = document.getElementById("currentScore");
+	value = parseInt(value);
 	if (isRight == 1){
 		popUpMessage("Correct! '" + answer + "' was right!");
 		addToGameLog("You answered correctly! '" + answer + "' was the answer. You got $" + value + ".");
