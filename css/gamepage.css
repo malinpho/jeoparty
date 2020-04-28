@@ -18,8 +18,6 @@ body {
   height:100%;
 }
 
-
-
 .overlay {
   height: 0%;
   width: 100%;
@@ -209,29 +207,18 @@ td#tdjeop:hover {
 
 } */
 
-.scoreCard {
-  background-color: #1F19AB !important;
-  margin: 10px;
-  color: black;
-  text-align: center;
-  opacity: 1;
-}
 
-.score {
-  font-family: "Arial-Black";
-  font-size: 15px;
-}
 
 table {
   font-size: 15px;
-  border-radius: 8px;
+  border-radius: 3px;
 }
 
 #gameLog {
   color: white;
   background-color: #343A40;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 7px;
+  border-radius: 2px;
 }
 
 p {

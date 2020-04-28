@@ -2,6 +2,11 @@
 
 include("editAccount.php");
 
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+  header("Location: login.php");
+
+}
+
 $conn = getDB();
 
 $username = $_SESSION['username'];
@@ -62,7 +67,7 @@ $user = mysqli_fetch_array($result);
 
   <div class = "whiteBox">
 
-    <button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.html';">Main Menu</button>
+    <button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.php';">Main Menu</button>
 
     <div class="container">
       <div class ="row">

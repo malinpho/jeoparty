@@ -2,6 +2,9 @@
 
 include('functions.php');
 
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+  header("Location: login.php");
+}
 
 $conn = getDB();
 $username = $_SESSION['username'];
@@ -40,18 +43,18 @@ $user = mysqli_fetch_array($result);
     <h3 id="gameModalContent" class="game-modal-content"></h3>
   </div>
 
+  <div id="questionPrompt" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content" id="question"></div><br>
+    <div class="overlay-content"></div>
+  </div>
+
   <!-- jeopardy game screen -->
 
   <div class="container-fluid">
     <div class="row">
       <!-- game board -->
       <div class="col-10 p-0">
-
-        <div id="questionPrompt" class="overlay">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      	<div class="overlay-content" id="question">Question</div><br>
-          <div class="overlay-content"></div>
-        </div>
 
         <table id ="jeoparty" class="table table-fixed">
 
@@ -195,7 +198,7 @@ $user = mysqli_fetch_array($result);
 
       <!-- score board and potentially chat -->
 
-      <div class="col-2 p-0">
+      <div class="col-2 p-0" id="rightSide">
         <table class="table table-sm table-dark table-curved mt-2">
           <thead>
             <tr>
@@ -234,6 +237,7 @@ $user = mysqli_fetch_array($result);
         <div class="buttons">
           <button class="slickButton" id="slickButtonBack" onclick="saveScore()" ><span>Save Score and Exit</span></button>
         </div>
+
 
       </div>
       </div>

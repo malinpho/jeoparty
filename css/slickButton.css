@@ -19,6 +19,10 @@
 	color: #ff0000;
 }
 
+#slickButtonBackWhite{
+	color: #ff0000;
+}
+
 #loginButton{
 	color: #1F19AB;
 }
@@ -29,6 +33,16 @@
 	width: 15px;
 	height: 5px;
 	background: black;
+	transform: skewX(50deg);
+	transition: .3s linear;
+}
+
+#slickButtonBackWhite::before,#slickButtonBackWhite::after{
+	content:"";
+	position: absolute;
+	width: 15px;
+	height: 5px;
+	background: white;
 	transform: skewX(50deg);
 	transition: .3s linear;
 }

@@ -28,7 +28,7 @@ if (isset($_POST['login'])) {
       session_start();
       $_SESSION['username'] = $username;
       // redirect
-      header("Location: menu.html");
+      header("Location: menu.php");
     } else {
       $error = "Username and password is invalid!";
     }

@@ -1,6 +1,12 @@
 <?php
 
 include('functions.php');
+
+if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+  header("Location: login.php");
+
+}
+
 $conn = getDB();
 
 $username = $_SESSION['username'];
@@ -33,7 +39,7 @@ $numRank = 1
       <h1>Leaderboard</h1>
 
       <div class = "profile">
-        <button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.html';">Main Menu</button>
+        <button class="slickButton" id="loginButton" onclick="window.location.href = 'menu.php';">Main Menu</button>
         <table class="table table-hover">
           <thead>
             <tr>
