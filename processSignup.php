@@ -46,7 +46,7 @@ if (isset($_POST['create'])) {
     $email_error = "E-mail is already registered!";
   } else {
     //insert user into system
-    $sqlstmt = "INSERT INTO users (username, password, name, email, countryID) VALUES (?,?,?,?,?)";
+    $sqlstmt = "INSERT INTO users (username, password, name, email, countryID, averageScore, gamesPlayed, highestScore, imageFile) VALUES (?,?,?,?,?,0,0,0,NULL)";
     $stmtinsert = $conn->prepare($sqlstmt);
     $stmtinsert->bind_param("ssssi",$username, $password, $name, $email, $countryID);
     $stmtinsert->execute();

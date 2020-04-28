@@ -1,10 +1,7 @@
 <?php
 
+session_start();
 include('functions.php');
-
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-  header("Location: login.php");
-}
 
 $conn = getDB();
 $username = $_SESSION['username'];
@@ -44,7 +41,6 @@ $user = mysqli_fetch_array($result);
   </div>
 
   <div id="questionPrompt" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content" id="question"></div><br>
     <div class="overlay-content"></div>
   </div>
@@ -227,6 +223,8 @@ $user = mysqli_fetch_array($result);
         <div class="d-md-flex">
           <div class="overflow-auto" id="gameLog" style="width: 100%; height: 50vh;">
             <p><?php echo $user['username'];?> is playing!</p>
+            <p>PRESS SPACE TO BUZZ</p>
+            <p>PRESS ENTER TO SUBMIT YOUR ANSWER</p>
           </div>
         </div>
         <div class="buttons">

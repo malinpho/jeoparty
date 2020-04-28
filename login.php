@@ -29,8 +29,9 @@ $conn = getDB();
             <p class="errmessage"> <?php echo $error; ?> </p>
           <?php endif ?>
           <button class="slickButton" id="loginButton" type="submit" name="login" >Login</button>
-          <button class="slickButton" id="slickButtonBackWhite" onclick="window.location.href = 'homepage.php'">Home</button>
+
 				</form>
+        <button class="slickButton" id="slickButtonBackWhite" onclick="window.location.href = 'homepage.php'">Home</button>
 
 				<p class="message">Not registered? <a href="signup.php">Sign Up</a></p>
 			</div>

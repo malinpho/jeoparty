@@ -1,10 +1,5 @@
 <?php
 
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-} else {
-  header("Location: menu.php");
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

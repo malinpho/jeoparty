@@ -132,7 +132,7 @@ function closeNav() {
 
 function waitForBuzz() {
   // start timer for 10 seconds
-  buzzTimer = setTimeout(noBuzz, 7500);
+  buzzTimer = setTimeout(noBuzz, 10000);
 
   //answer question
   document.addEventListener("keydown", spaceInput);
@@ -164,7 +164,7 @@ function openKeyboard(){
   document.getElementById("answerInput").select();
 
   // add timer for user to answer question:
-  answerTimer = setTimeout(noAnswer, 7500);
+  answerTimer = setTimeout(noAnswer, 10000);
 
   //answer question
   document.addEventListener("keydown", enterInput);
